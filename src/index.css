@@ -206,6 +206,16 @@ img {
   border-color: white;
 }
 
+.btn-outline-dark {
+  border-color: rgba(122, 59, 46, 0.35);
+  color: var(--color-ink);
+}
+
+.btn-outline-dark:hover {
+  background-color: rgba(122, 59, 46, 0.08);
+  border-color: var(--color-terracotta);
+}
+
 /* SECTIONS */
 .section {
   padding: 6.5rem 5%;
@@ -553,6 +563,23 @@ img {
   font-size: 1.05rem;
   margin: 1rem 0 2rem;
   line-height: 1.7;
+}
+
+.contact-text a {
+  color: var(--color-terracotta);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-text a:hover {
+  text-decoration: underline;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /* FOOTER */

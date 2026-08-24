@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const FACEBOOK_PAGE_ID = '61568603560493';
+const WHATSAPP_NUMBER = '22372749411';
 
 function buildMessage(method, name, details) {
   const lines = [
@@ -29,10 +30,11 @@ export default function DonationModal({ method, onClose }) {
 
   if (!method) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const send = (channel) => {
     const message = buildMessage(method, name, details);
-    const url = `https://m.me/${FACEBOOK_PAGE_ID}?text=${encodeURIComponent(message)}`;
+    const url = channel === 'whatsapp'
+      ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+      : `https://m.me/${FACEBOOK_PAGE_ID}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
     onClose();
   };
@@ -44,7 +46,7 @@ export default function DonationModal({ method, onClose }) {
         <h3 className="modal-title">{method.title}</h3>
         <p className="modal-subtitle">{method.description}</p>
 
-        <form onSubmit={handleSubmit} className="modal-form">
+        <form onSubmit={(e) => { e.preventDefault(); send('whatsapp'); }} className="modal-form">
           <label className="modal-label">
             Votre nom
             <input
@@ -68,11 +70,14 @@ export default function DonationModal({ method, onClose }) {
           </label>
 
           <button type="submit" className="btn-donate modal-submit">
+            Envoyer via WhatsApp
+          </button>
+          <button type="button" className="btn-outline btn-outline-dark modal-submit" onClick={() => send('messenger')}>
             Envoyer via Messenger
           </button>
           <p className="modal-hint">
-            Ce message ouvrira une conversation Facebook Messenger avec la page officielle
-            MahkaSam Officiel pour organiser votre aide directement avec l'association.
+            Ce message sera envoyé directement à Mah Ka Sam (+223 72 74 94 11) ou à la page
+            officielle MahkaSam Officiel pour organiser votre aide avec l'association.
           </p>
         </form>
       </div>

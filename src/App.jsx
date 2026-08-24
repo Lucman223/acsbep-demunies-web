@@ -156,11 +156,22 @@ function App() {
           <h2 className="section-title">Contact</h2>
           <p className="contact-text">
             {contentData.contact.address}<br />
-            Zone d'intervention : {contentData.contact.scope}
+            Zone d'intervention : {contentData.contact.scope}<br />
+            Téléphone : <a href={`tel:${contentData.contact.phone.replace(/\s/g, '')}`}>{contentData.contact.phone}</a>
           </p>
-          <a href={contentData.social[0].url} target="_blank" rel="noopener noreferrer" className="btn-donate">
-            Nous contacter sur les réseaux
-          </a>
+          <div className="contact-actions">
+            <a
+              href={`https://wa.me/${contentData.contact.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-donate"
+            >
+              Écrire sur WhatsApp
+            </a>
+            <a href={contentData.social[0].url} target="_blank" rel="noopener noreferrer" className="btn-outline btn-outline-dark">
+              Nous contacter sur les réseaux
+            </a>
+          </div>
         </div>
       </section>
 
