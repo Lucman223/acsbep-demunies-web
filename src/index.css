@@ -466,6 +466,29 @@ img {
   flex-direction: column;
 }
 
+.donate-card-clickable {
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  width: 100%;
+}
+
+.donate-card-clickable:hover,
+.donate-card-clickable:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(42, 26, 18, 0.1);
+  border-color: var(--color-terracotta);
+  outline: none;
+}
+
+.donate-card-cta {
+  margin-top: 1.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-terracotta);
+}
+
 .donate-details {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
@@ -567,6 +590,118 @@ img {
 
 .footer p + p {
   margin-top: 0.4rem;
+}
+
+/* DONATION MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 26, 18, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 2000;
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-box {
+  background: var(--color-cream);
+  border-radius: 24px;
+  padding: 2.5rem;
+  max-width: 460px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(42, 26, 18, 0.35);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.modal-close:hover {
+  color: var(--color-terracotta);
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+}
+
+.modal-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.modal-input,
+.modal-textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(122, 59, 46, 0.2);
+  background: white;
+  color: var(--color-text);
+  font-weight: 400;
+  resize: vertical;
+}
+
+.modal-input:focus,
+.modal-textarea:focus {
+  outline: none;
+  border-color: var(--color-terracotta);
+}
+
+.modal-submit {
+  border: none;
+  margin-top: 0.5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.modal-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  text-align: center;
 }
 
 @media (max-width: 600px) {

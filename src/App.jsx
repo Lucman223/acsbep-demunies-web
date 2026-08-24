@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import logo from './assets/logo.png';
 import { contentData } from './data/content';
 import { socialIcons, activityIcons, donationIcons } from './components/Icons';
+import DonationModal from './components/DonationModal';
 
 function App() {
+  const [activeMethod, setActiveMethod] = useState(null);
+
   return (
     <>
       <nav className="navbar">
@@ -116,7 +119,12 @@ function App() {
           {contentData.donationMethods.map((method) => {
             const Icon = donationIcons[method.icon];
             return (
-              <div key={method.id} className="donate-card">
+              <button
+                key={method.id}
+                type="button"
+                className="donate-card donate-card-clickable"
+                onClick={() => setActiveMethod(method)}
+              >
                 <div className="card-icon"><Icon /></div>
                 <h3 className="card-title">{method.title}</h3>
                 <p className="card-desc">{method.description}</p>
@@ -130,17 +138,17 @@ function App() {
                     </div>
                   ))}
                 </div>
-              </div>
+                <span className="donate-card-cta">Je veux aider ainsi →</span>
+              </button>
             );
           })}
         </div>
         <p className="donate-note">{contentData.donationNote}</p>
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <a href={contentData.social[0].url} target="_blank" rel="noopener noreferrer" className="btn-donate">
-            Contacter l'association
-          </a>
-        </div>
       </section>
+
+      {activeMethod && (
+        <DonationModal method={activeMethod} onClose={() => setActiveMethod(null)} />
+      )}
 
       <section id="contact" className="section contact-section">
         <div className="contact-box">
