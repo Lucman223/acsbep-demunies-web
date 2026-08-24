@@ -1,43 +1,78 @@
 export const contentData = {
   hero: {
-    subtitle: "Association Cœur Solidaire pour le Bien-Être des Personnes Démunies",
-    title: "Acción humanitaria directa y transparente en Malí.",
-    description: "Nuestra misión es llevar asistencia vital a las familias más vulnerables. Cero intermediarios, 100% impacto real."
+    tag: "Solidarité et transparence",
+    title: "L'espoir",
+    titleAccent: "arrive directement",
+    titleEnd: "à ceux qui en ont besoin.",
+    description:
+      "ACSBEP-DEMUNIES est une association humanitaire basée à Bamako. Sans intermédiaires, chaque don, chaque sac de riz et chaque brique posée est filmé et partagé pour que vous puissiez le voir de vos propres yeux."
   },
   history: {
-    title: "Nuestra Historia y Misión",
-    text: "Fundada por el joven filántropo e influencer maliense Minkoro Bakayoko, conocido mundialmente como Mah Ka Sam. Tras el profundo impacto del fallecimiento de su abuela, Mah Ka Sam decidió orientar toda su influencia en redes sociales hacia una causa mayor: ayudar a los más desfavorecidos de Malí. Hoy, gracias a la movilización ciudadana en plataformas como TikTok y Facebook, ACSBEP-DEMUNIES se ha convertido en un pilar de esperanza y solidaridad."
+    title: "Notre Histoire",
+    text: "Fondée par le jeune philanthrope et créateur de contenu malien Minkoro Bagayoko, connu de tous sous le nom de Mah Ka Sam. Après le décès de sa grand-mère, il a décidé de mettre toute son influence sur les réseaux sociaux au service d'une cause plus grande : venir en aide aux plus démunis du Mali.",
+    highlight: "Aujourd'hui, grâce à la mobilisation citoyenne sur TikTok, YouTube et Facebook, ACSBEP-DEMUNIES est devenue un pilier d'espoir et de solidarité pour tout le Mali."
   },
   impact: {
-    title: "Reconocimiento y Transparencia",
-    text: "Nuestra mayor fuerza es la transparencia absoluta. Documentamos en video cada entrega y acción, lo que ha generado una ola de solidaridad sin precedentes. Gracias a este esfuerzo, hemos recibido el apoyo público de grandes bienhechores, empresarios como Barouni Gamby y personalidades como Awa Doumbia, quienes han reconocido el trabajo incansable de Mah Ka Sam con donaciones significativas para que podamos seguir operando y ampliando nuestra ayuda."
+    title: "Transparence Totale",
+    text: "Notre plus grande force, c'est de tout montrer. Chaque distribution, chaque chantier, chaque don est documenté en vidéo et publié sur nos réseaux — sans montage, sans filtre. Cette transparence a permis de mobiliser des milliers de personnes et de recevoir le soutien de bienfaiteurs qui ont vu, de leurs propres yeux, où va chaque franc CFA."
   },
   activities: [
     {
       id: 1,
-      title: "Ayuda Alimentaria",
-      description: "Distribución constante de víveres esenciales (sacos de arroz, aceite, leche) a viudas, huérfanos y familias en situación de precariedad extrema.",
-      image: "https://images.unsplash.com/photo-1593113514214-41d3ccb0c793?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      icon: "🍲"
+      title: "Aide Alimentaire",
+      description: "Distribution régulière de vivres essentiels — riz, huile, lait — aux veuves, orphelins et familles en situation de précarité extrême.",
+      icon: "food"
     },
     {
       id: 2,
-      title: "Educación y Apoyo Escolar",
-      description: "Garantizamos que la falta de recursos no sea un obstáculo para el aprendizaje, proporcionando material escolar y apoyo a niños desfavorecidos.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      icon: "📚"
+      title: "Éducation & Fournitures",
+      description: "Le manque de moyens ne doit jamais arrêter un enfant. Nous fournissons du matériel scolaire et un accompagnement aux plus démunis.",
+      icon: "book"
     },
     {
       id: 3,
-      title: "Salud y Vivienda Digna",
-      description: "Organizamos campañas de sensibilización sanitaria, instalamos infraestructuras vitales como paneles solares y rehabilitamos viviendas inseguras.",
-      image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      icon: "🏠"
+      title: "Logement & Santé",
+      description: "Installation de panneaux solaires, réhabilitation d'habitations précaires et campagnes de sensibilisation sanitaire sur le terrain.",
+      icon: "home"
     }
   ],
   stats: [
-    { label: "Familias Ayudadas", value: "+5,000" },
-    { label: "Kits Entregados", value: "+10,000" },
-    { label: "Transparencia", value: "100%" }
-  ]
+    { label: "Familles aidées", value: "5 000+" },
+    { label: "Kits distribués", value: "10 000+" },
+    { label: "Transparence", value: "100%" }
+  ],
+  social: [
+    {
+      name: "TikTok",
+      handle: "@mah_ka_sam",
+      url: "https://www.tiktok.com/@mah_ka_sam",
+      description: "Le cœur de notre action : interviews terrain et remises de dons en direct.",
+      icon: "tiktok"
+    },
+    {
+      name: "YouTube",
+      handle: "@mah_ka_sam",
+      url: "https://www.youtube.com/@mah_ka_sam",
+      description: "Reportages complets sur nos projets et grands chantiers solidaires.",
+      icon: "youtube"
+    },
+    {
+      name: "Facebook",
+      handle: "MahkaSam Officiel",
+      url: "https://www.facebook.com/61568603560493",
+      description: "Communiqués officiels, inaugurations et actualités de l'association.",
+      icon: "facebook"
+    },
+    {
+      name: "Instagram",
+      handle: "@mah_ka_sam.ml",
+      url: "https://www.instagram.com/mah_ka_sam.ml/",
+      description: "Photos et moments forts de nos actions sur le terrain.",
+      icon: "instagram"
+    }
+  ],
+  contact: {
+    address: "Tournant de Baco Djicoroni ACI, près de la BNDA, Bamako, Mali",
+    scope: "Mali et toute l'Afrique"
+  }
 };

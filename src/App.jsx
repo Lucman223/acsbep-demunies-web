@@ -2,81 +2,81 @@ import React from 'react';
 import './index.css';
 import logo from './assets/logo.png';
 import { contentData } from './data/content';
+import { socialIcons, activityIcons } from './components/Icons';
 
 function App() {
   return (
     <>
       <nav className="navbar">
         <div className="logo-container">
-          <img src={logo} alt="ACSBEP-DEMUNIES Logo" className="logo-img" />
+          <img src={logo} alt="Logo ACSBEP-DEMUNIES" className="logo-img" />
           <div className="logo-text">ACSBEP-DEMUNIES</div>
         </div>
         <div className="nav-links">
-          <a href="#historia">HISTORIA</a>
-          <a href="#proyectos">ACCIÓN</a>
-          <a href="#impacto">TRANSPARENCIA</a>
+          <a href="#histoire">HISTOIRE</a>
+          <a href="#actions">ACTIONS</a>
+          <a href="#reseaux">RÉSEAUX</a>
+          <a href="#contact">CONTACT</a>
         </div>
-        <a href="#" className="btn-donate">COLABORAR</a>
+        <a href="#reseaux" className="btn-donate">SOUTENIR</a>
       </nav>
 
       <section className="hero">
         <div className="hero-content">
-          <div className="hero-tag">Solidaridad y Acción</div>
+          <div className="hero-tag">{contentData.hero.tag}</div>
           <h1 className="hero-title">
-            Esperanza para<br/><span>todo Malí.</span>
+            {contentData.hero.title} <span className="accent">{contentData.hero.titleAccent}</span> {contentData.hero.titleEnd}
           </h1>
-          <p className="hero-text">
-            {contentData.hero.description}
-          </p>
-          <a href="#proyectos" className="btn-donate" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem' }}>
-            Descubre Nuestro Trabajo
-          </a>
+          <p className="hero-text">{contentData.hero.description}</p>
+          <div className="hero-actions">
+            <a href="#actions" className="btn-donate" style={{ padding: '1rem 2.2rem', fontSize: '1rem' }}>
+              Découvrir nos actions
+            </a>
+            <a href="#reseaux" className="btn-outline">Voir nos vidéos</a>
+          </div>
         </div>
       </section>
 
-      <section id="historia" className="section">
-        <h2 className="section-title"><span>{contentData.history.title}</span></h2>
+      <section id="histoire" className="section">
+        <span className="section-tag">Depuis le début</span>
+        <h2 className="section-title">{contentData.history.title}</h2>
         <div className="history-grid">
           <div>
-            <p className="history-text">
-              {contentData.history.text}
-            </p>
-            <p className="history-text" style={{ marginTop: '1.5rem', fontWeight: '600', color: '#10b981' }}>
-              Bajo el liderazgo de Mah Ka Sam, la ayuda llega directamente a las manos que más lo necesitan.
-            </p>
+            <p className="history-text">{contentData.history.text}</p>
+            <p className="history-highlight">{contentData.history.highlight}</p>
           </div>
           <div>
-            <img 
-              src="https://images.unsplash.com/photo-1593113514214-41d3ccb0c793?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-              alt="Ayuda humanitaria" 
+            <img
+              src="https://images.unsplash.com/photo-1747889268735-31192c2a6df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Distribution d'aide humanitaire à Bamako"
               className="history-img"
             />
           </div>
         </div>
       </section>
 
-      <section id="proyectos" className="section projects-section">
-        <h2 className="section-title"><span>Nuestros Pilares de Acción</span></h2>
+      <section id="actions" className="section projects-section">
+        <span className="section-tag">Notre travail</span>
+        <h2 className="section-title">Nos Piliers d'Action</h2>
         <div className="cards">
-          {contentData.activities.map(act => (
-            <div key={act.id} className="card">
-              <img src={act.image} alt={act.title} className="card-img" />
-              <div className="card-body">
-                <div className="card-icon">{act.icon}</div>
+          {contentData.activities.map(act => {
+            const Icon = activityIcons[act.icon];
+            return (
+              <div key={act.id} className="card">
+                <div className="card-icon"><Icon /></div>
                 <h3 className="card-title">{act.title}</h3>
-                <p style={{ color: '#6b7280' }}>{act.description}</p>
+                <p className="card-desc">{act.description}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
-      <section id="impacto" className="section impact-section">
+      <section className="section impact-section">
         <div className="impact-content">
-          <h2 className="section-title" style={{ color: 'white' }}><span>{contentData.impact.title}</span></h2>
-          <p className="impact-text">
-            {contentData.impact.text}
-          </p>
+          <span className="section-tag" style={{ color: 'var(--color-ochre)' }}>Preuves à l'appui</span>
+          <h2 className="section-title" style={{ color: 'white' }}>{contentData.impact.title}</h2>
+          <p className="impact-text">{contentData.impact.text}</p>
           <div className="stats">
             {contentData.stats.map((stat, idx) => (
               <div key={idx} className="stat-item">
@@ -88,13 +88,47 @@ function App() {
         </div>
       </section>
 
+      <section id="reseaux" className="section social-section">
+        <span className="section-tag">Suivez le terrain, en direct</span>
+        <h2 className="section-title">Nos Réseaux Sociaux</h2>
+        <div className="social-grid">
+          {contentData.social.map((net, idx) => {
+            const Icon = socialIcons[net.icon];
+            return (
+              <a key={idx} href={net.url} target="_blank" rel="noopener noreferrer" className="social-card">
+                <div className="social-icon"><Icon /></div>
+                <div>
+                  <div className="social-name">{net.name}</div>
+                  <div className="social-handle">{net.handle}</div>
+                </div>
+                <p className="social-desc">{net.description}</p>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="contact" className="section contact-section">
+        <div className="contact-box">
+          <span className="section-tag">Nous trouver</span>
+          <h2 className="section-title">Contact</h2>
+          <p className="contact-text">
+            {contentData.contact.address}<br />
+            Zone d'intervention : {contentData.contact.scope}
+          </p>
+          <a href={contentData.social[0].url} target="_blank" rel="noopener noreferrer" className="btn-donate">
+            Nous contacter sur les réseaux
+          </a>
+        </div>
+      </section>
+
       <footer className="footer">
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-          <img src={logo} alt="Logo" style={{ height: '40px', filter: 'grayscale(100%) opacity(0.5)' }} />
-          <strong style={{ letterSpacing: '2px' }}>ACSBEP-DEMUNIES</strong>
+        <div className="footer-brand">
+          <img src={logo} alt="Logo" />
+          <strong>ACSBEP-DEMUNIES</strong>
         </div>
         <p>© 2026 Association Cœur Solidaire pour le Bien-Être des Personnes Démunies.</p>
-        <p style={{ marginTop: '0.5rem' }}>Transparencia y acción por Malí.</p>
+        <p>Transparence et action pour le Mali.</p>
       </footer>
     </>
   );
