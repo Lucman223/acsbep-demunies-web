@@ -1,79 +1,102 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './index.css';
-
-import Option1 from './components/Option1';
-import Option2 from './components/Option2';
-import Option3 from './components/Option3';
-
-import imgBlue from './assets/charity_design_blue_1787590922494.png';
-import imgGreen from './assets/charity_design_green_1787590932581.png';
-import imgTerracotta from './assets/charity_design_terracotta_1787590943593.png';
-
-function Chooser() {
-  return (
-    <div style={{ padding: '3rem 5%', backgroundColor: '#f9fafb', minHeight: '100vh', fontFamily: 'Inter, sans-serif' }}>
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <h1 style={{ fontSize: '3rem', color: '#111827', marginBottom: '1rem' }}>ACSBEP-DEMUNIES</h1>
-        <p style={{ fontSize: '1.2rem', color: '#4b5563', maxWidth: '800px', margin: '0 auto' }}>
-          Bienvenidos. Estamos preparando la nueva plataforma web para la asociación. 
-          Por favor, haz clic en el botón debajo de cada imagen para <strong>probar la versión interactiva</strong> de ese diseño.
-        </p>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem', maxWidth: '1400px', margin: '0 auto' }}>
-        
-        {/* Opción 1 */}
-        <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
-          <img src={imgBlue} alt="Opción 1" style={{ width: '100%', height: 'auto', display: 'block' }} />
-          <div style={{ padding: '2rem', textAlign: 'center', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <h2 style={{ fontSize: '1.5rem', color: '#1d4ed8', marginBottom: '0.5rem' }}>Opción 1: Institucional</h2>
-              <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Azul y Oro. Diseño corporativo y muy profesional, similar a UNICEF. Transmite confianza y seguridad.</p>
-            </div>
-            <Link to="/option-1" style={{ display: 'inline-block', backgroundColor: '#1d4ed8', color: 'white', padding: '1rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>Probar Opción 1</Link>
-          </div>
-        </div>
-
-        {/* Opción 2 */}
-        <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
-          <img src={imgGreen} alt="Opción 2" style={{ width: '100%', height: 'auto', display: 'block' }} />
-          <div style={{ padding: '2rem', textAlign: 'center', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <h2 style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '0.5rem' }}>Opción 2: Minimalista</h2>
-              <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Verde Esmeralda. Diseño moderno de alto contraste. Muy limpio, elegante y enfocado en el mensaje.</p>
-            </div>
-            <Link to="/option-2" style={{ display: 'inline-block', backgroundColor: '#047857', color: 'white', padding: '1rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>Probar Opción 2</Link>
-          </div>
-        </div>
-
-        {/* Opción 3 */}
-        <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column' }}>
-          <img src={imgTerracotta} alt="Opción 3" style={{ width: '100%', height: 'auto', display: 'block' }} />
-          <div style={{ padding: '2rem', textAlign: 'center', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <div>
-              <h2 style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '0.5rem' }}>Opción 3: Raíces</h2>
-              <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Terracota y Amarillo. Diseño cálido y vibrante. Transmite cercanía, comunidad y raíces africanas.</p>
-            </div>
-            <Link to="/option-3" style={{ display: 'inline-block', backgroundColor: '#b45309', color: 'white', padding: '1rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold' }}>Probar Opción 3</Link>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  );
-}
+import logo from './assets/logo.png';
+import { contentData } from './data/content';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Chooser />} />
-        <Route path="/option-1" element={<Option1 />} />
-        <Route path="/option-2" element={<Option2 />} />
-        <Route path="/option-3" element={<Option3 />} />
-      </Routes>
-    </Router>
+    <>
+      <nav className="navbar">
+        <div className="logo-container">
+          <img src={logo} alt="ACSBEP-DEMUNIES Logo" className="logo-img" />
+          <div className="logo-text">ACSBEP-DEMUNIES</div>
+        </div>
+        <div className="nav-links">
+          <a href="#historia">HISTORIA</a>
+          <a href="#proyectos">ACCIÓN</a>
+          <a href="#impacto">TRANSPARENCIA</a>
+        </div>
+        <a href="#" className="btn-donate">COLABORAR</a>
+      </nav>
+
+      <section className="hero">
+        <div className="hero-content">
+          <div className="hero-tag">Solidaridad y Acción</div>
+          <h1 className="hero-title">
+            Esperanza para<br/><span>todo Malí.</span>
+          </h1>
+          <p className="hero-text">
+            {contentData.hero.description}
+          </p>
+          <a href="#proyectos" className="btn-donate" style={{ padding: '1.2rem 3rem', fontSize: '1.1rem' }}>
+            Descubre Nuestro Trabajo
+          </a>
+        </div>
+      </section>
+
+      <section id="historia" className="section">
+        <h2 className="section-title"><span>{contentData.history.title}</span></h2>
+        <div className="history-grid">
+          <div>
+            <p className="history-text">
+              {contentData.history.text}
+            </p>
+            <p className="history-text" style={{ marginTop: '1.5rem', fontWeight: '600', color: '#10b981' }}>
+              Bajo el liderazgo de Mah Ka Sam, la ayuda llega directamente a las manos que más lo necesitan.
+            </p>
+          </div>
+          <div>
+            <img 
+              src="https://images.unsplash.com/photo-1593113514214-41d3ccb0c793?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              alt="Ayuda humanitaria" 
+              className="history-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" className="section projects-section">
+        <h2 className="section-title"><span>Nuestros Pilares de Acción</span></h2>
+        <div className="cards">
+          {contentData.activities.map(act => (
+            <div key={act.id} className="card">
+              <img src={act.image} alt={act.title} className="card-img" />
+              <div className="card-body">
+                <div className="card-icon">{act.icon}</div>
+                <h3 className="card-title">{act.title}</h3>
+                <p style={{ color: '#6b7280' }}>{act.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="impacto" className="section impact-section">
+        <div className="impact-content">
+          <h2 className="section-title" style={{ color: 'white' }}><span>{contentData.impact.title}</span></h2>
+          <p className="impact-text">
+            {contentData.impact.text}
+          </p>
+          <div className="stats">
+            {contentData.stats.map((stat, idx) => (
+              <div key={idx} className="stat-item">
+                <div className="stat-num">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+          <img src={logo} alt="Logo" style={{ height: '40px', filter: 'grayscale(100%) opacity(0.5)' }} />
+          <strong style={{ letterSpacing: '2px' }}>ACSBEP-DEMUNIES</strong>
+        </div>
+        <p>© 2026 Association Cœur Solidaire pour le Bien-Être des Personnes Démunies.</p>
+        <p style={{ marginTop: '0.5rem' }}>Transparencia y acción por Malí.</p>
+      </footer>
+    </>
   );
 }
 
