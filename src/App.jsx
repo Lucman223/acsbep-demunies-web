@@ -1,97 +1,55 @@
 import React from 'react';
 import './index.css';
+import imgBlue from './assets/charity_design_blue_1787590922494.png';
+import imgGreen from './assets/charity_design_green_1787590932581.png';
+import imgTerracotta from './assets/charity_design_terracotta_1787590943593.png';
 
 function App() {
   return (
-    <>
-      <nav className="navbar">
-        <a href="#" className="logo">ACSBEP</a>
-        <div className="nav-links">
-          <a href="#about">Sobre Nosotros</a>
-          <a href="#projects">Proyectos</a>
-          <a href="#transparency">Transparencia</a>
-        </div>
-        <button className="btn-donate">Haz una donación</button>
-      </nav>
-
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">Ayudando a los más vulnerables en Malí y toda África</h1>
-          <p className="hero-subtitle">Association Cœur Solidaire pour le Bien-Être des Personnes Démunies. Juntos podemos cambiar vidas, paso a paso.</p>
-          <button className="btn-donate" style={{ padding: '1rem 2rem', fontSize: '1.2rem' }}>Dona Ahora</button>
-        </div>
-      </section>
-
-      <section id="about" className="about">
-        <h2 className="section-title">Quiénes <span>Somos</span></h2>
-        <p className="about-text">
-          Somos una organización humanitaria sin fines de lucro con sede en Bamako (Tournant de Baco Djicoroni ACI). Nuestra misión es brindar asistencia a personas vulnerables y familias en situación de precariedad extrema, con total transparencia y dedicación.
+    <div style={{ padding: '3rem 5%', backgroundColor: '#f9fafb', minHeight: '100vh', fontFamily: 'Inter, sans-serif' }}>
+      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <h1 style={{ fontSize: '3rem', color: '#111827', marginBottom: '1rem' }}>ACSBEP-DEMUNIES</h1>
+        <p style={{ fontSize: '1.2rem', color: '#4b5563', maxWidth: '800px', margin: '0 auto' }}>
+          Bienvenidos. Estamos preparando la nueva plataforma web para la asociación. 
+          Por favor, revisen las siguientes 3 propuestas de diseño visual y elijan su favorita para que podamos construirla.
         </p>
+      </div>
 
-        <div className="figures-grid">
-          <div className="figure-card">
-            <h3>Minkoro Bagayoko</h3>
-            <p>Conocido como <strong>"Mah Ka Sam"</strong>, es el motor principal y rostro de nuestra asociación. Filántropo e influencer maliense que moviliza a la comunidad para apoyar causas solidarias a través de redes sociales.</p>
-          </div>
-          <div className="figure-card">
-            <h3>Transparencia Total</h3>
-            <p>No ocultamos nada. A través de nuestros canales en YouTube y TikTok, documentamos casos reales y mostramos con total claridad la entrega de cada donación a quienes más lo necesitan.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="projects">
-        <div className="projects-header">
-          <h2 className="section-title">Nuestros <span>Proyectos</span></h2>
-          <p>Tus donaciones se transforman en acciones reales en el terreno.</p>
-        </div>
-
-        <div className="projects-grid">
-          <div className="project-card">
-            <img src="https://images.unsplash.com/photo-1593113514214-41d3ccb0c793?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Distribución" className="project-img" />
-            <div className="project-content">
-              <h3 className="project-title">Alimentos y Ropa</h3>
-              <p className="project-desc">Kits de primera necesidad y asistencia financiera directa para familias que no pueden cubrir sus necesidades básicas.</p>
-              <div className="progress-container"><div className="progress-bar" style={{ width: '85%' }}></div></div>
-              <button className="btn-donate" style={{ width: '100%' }}>Apoyar este proyecto</button>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paneles Solares" className="project-img" />
-            <div className="project-content">
-              <h3 className="project-title">Desarrollo Local</h3>
-              <p className="project-desc">Instalación de paneles solares y mejoras de infraestructura en zonas desfavorecidas para una mejor calidad de vida.</p>
-              <div className="progress-container"><div className="progress-bar" style={{ width: '60%' }}></div></div>
-              <button className="btn-donate" style={{ width: '100%' }}>Apoyar este proyecto</button>
-            </div>
-          </div>
-
-          <div className="project-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Viviendas" className="project-img" />
-            <div className="project-content">
-              <h3 className="project-title">Viviendas Dignas</h3>
-              <p className="project-desc">Renovación y construcción de hogares seguros para personas viviendo en situaciones de extrema pobreza.</p>
-              <div className="progress-container"><div className="progress-bar" style={{ width: '40%' }}></div></div>
-              <button className="btn-donate" style={{ width: '100%' }}>Apoyar este proyecto</button>
-            </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem', maxWidth: '1400px', margin: '0 auto' }}>
+        
+        {/* Opción 1 */}
+        <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
+          <img src={imgBlue} alt="Opción 1" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          <div style={{ padding: '2rem', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '1.5rem', color: '#1d4ed8', marginBottom: '0.5rem' }}>Opción 1: Institucional</h2>
+            <p style={{ color: '#6b7280' }}>Azul y Oro. Diseño corporativo y muy profesional, similar a UNICEF. Transmite confianza y seguridad.</p>
           </div>
         </div>
-      </section>
 
-      <footer>
-        <h2>ACSBEP-DEMUNIES</h2>
-        <p>Tournant de Baco Djicoroni ACI près de la BNDA - Bamako, Mali</p>
-        <div className="social-links">
-          <a href="#">YouTube (@mah_ka_sam)</a>
-          <a href="#">TikTok</a>
-          <a href="#">Facebook</a>
+        {/* Opción 2 */}
+        <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
+          <img src={imgGreen} alt="Opción 2" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          <div style={{ padding: '2rem', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '0.5rem' }}>Opción 2: Minimalista</h2>
+            <p style={{ color: '#6b7280' }}>Verde Esmeralda. Diseño moderno de alto contraste. Muy limpio, elegante y enfocado en el mensaje.</p>
+          </div>
         </div>
-        <p style={{ marginTop: '2rem', fontSize: '0.9rem', opacity: 0.7 }}>
-          © 2026 Association Cœur Solidaire pour le Bien-Être des Personnes Démunies.
-        </p>
-      </footer>
-    </>
+
+        {/* Opción 3 */}
+        <div style={{ backgroundColor: '#fff', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
+          <img src={imgTerracotta} alt="Opción 3" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          <div style={{ padding: '2rem', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '0.5rem' }}>Opción 3: Raíces</h2>
+            <p style={{ color: '#6b7280' }}>Terracota y Amarillo. Diseño cálido y vibrante. Transmite cercanía, comunidad y raíces africanas.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: '5rem', padding: '2rem', borderTop: '1px solid #e5e7eb' }}>
+        <p style={{ color: '#9ca3af' }}>© 2026 Association Cœur Solidaire pour le Bien-Être des Personnes Démunies.</p>
+      </div>
+    </div>
   );
 }
 
