@@ -74,5 +74,45 @@ export const contentData = {
   contact: {
     address: "Tournant de Baco Djicoroni ACI, près de la BNDA, Bamako, Mali",
     scope: "Mali et toute l'Afrique"
-  }
+  },
+  donationMethods: [
+    {
+      id: "money",
+      title: "Don en Argent",
+      description: "Orange Money, Moov Money ou virement bancaire.",
+      icon: "money",
+      details: [
+        { label: "Orange Money", value: "[EN ATTENTE — numéro officiel à confirmer]" },
+        { label: "Compte bancaire", value: "[EN ATTENTE — RIB/IBAN à confirmer]" }
+      ]
+    },
+    {
+      id: "goods",
+      title: "Dons en Nature",
+      description: "Vêtements, kits scolaires, denrées non périssables.",
+      icon: "gift",
+      details: [
+        { label: "Dépôt", value: "Tournant de Baco Djicoroni ACI, près de la BNDA, Bamako" }
+      ]
+    },
+    {
+      id: "food",
+      title: "Don Alimentaire",
+      description: "Riz, huile, lait — remis directement lors de nos distributions.",
+      icon: "food",
+      details: [
+        { label: "Coordination", value: "À organiser via nos réseaux sociaux" }
+      ]
+    },
+    {
+      id: "other",
+      title: "Toute Autre Aide",
+      description: "Temps, compétences, matériel, contacts, transport, hébergement... toute forme de soutien est la bienvenue.",
+      icon: "heart",
+      details: [
+        { label: "Bénévolat & partenariats", value: "Contactez-nous pour en discuter" }
+      ]
+    }
+  ],
+  donationNote: "Les moyens de paiement officiels (Orange Money, compte bancaire) seront publiés ici dès confirmation par l'association. En attendant, contactez-nous directement sur nos réseaux sociaux pour organiser votre don en toute sécurité — toute forme d'aide est la bienvenue."
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import logo from './assets/logo.png';
 import { contentData } from './data/content';
-import { socialIcons, activityIcons } from './components/Icons';
+import { socialIcons, activityIcons, donationIcons } from './components/Icons';
 
 function App() {
   return (
@@ -15,10 +15,11 @@ function App() {
         <div className="nav-links">
           <a href="#histoire">HISTOIRE</a>
           <a href="#actions">ACTIONS</a>
+          <a href="#aider">AIDER</a>
           <a href="#reseaux">RÉSEAUX</a>
           <a href="#contact">CONTACT</a>
         </div>
-        <a href="#reseaux" className="btn-donate">SOUTENIR</a>
+        <a href="#aider" className="btn-donate">SOUTENIR</a>
       </nav>
 
       <section className="hero">
@@ -29,8 +30,8 @@ function App() {
           </h1>
           <p className="hero-text">{contentData.hero.description}</p>
           <div className="hero-actions">
-            <a href="#actions" className="btn-donate" style={{ padding: '1rem 2.2rem', fontSize: '1rem' }}>
-              Découvrir nos actions
+            <a href="#aider" className="btn-donate" style={{ padding: '1rem 2.2rem', fontSize: '1rem' }}>
+              Comment aider
             </a>
             <a href="#reseaux" className="btn-outline">Voir nos vidéos</a>
           </div>
@@ -105,6 +106,39 @@ function App() {
               </a>
             );
           })}
+        </div>
+      </section>
+
+      <section id="aider" className="section donate-section">
+        <span className="section-tag">Passez à l'action</span>
+        <h2 className="section-title">Comment Aider</h2>
+        <div className="donate-grid">
+          {contentData.donationMethods.map((method) => {
+            const Icon = donationIcons[method.icon];
+            return (
+              <div key={method.id} className="donate-card">
+                <div className="card-icon"><Icon /></div>
+                <h3 className="card-title">{method.title}</h3>
+                <p className="card-desc">{method.description}</p>
+                <div className="donate-details">
+                  {method.details.map((d, i) => (
+                    <div key={i} className="donate-detail-row">
+                      <span className="donate-detail-label">{d.label}</span>
+                      <span className={`donate-detail-value${d.value.startsWith('[EN ATTENTE') ? ' pending' : ''}`}>
+                        {d.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <p className="donate-note">{contentData.donationNote}</p>
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <a href={contentData.social[0].url} target="_blank" rel="noopener noreferrer" className="btn-donate">
+            Contacter l'association
+          </a>
         </div>
       </section>
 
