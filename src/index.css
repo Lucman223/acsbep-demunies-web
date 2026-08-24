@@ -99,6 +99,32 @@ img {
   color: var(--color-terracotta);
 }
 
+.nav-links a.nav-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-terracotta-dark);
+  background: rgba(193, 80, 46, 0.1);
+  border: 1px solid rgba(193, 80, 46, 0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.nav-links a.nav-highlight::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  flex-shrink: 0;
+}
+
+.nav-links a.nav-highlight:hover {
+  background: rgba(193, 80, 46, 0.18);
+  color: var(--color-terracotta-dark);
+}
+
 .btn-donate {
   background: linear-gradient(135deg, var(--color-terracotta), var(--color-terracotta-dark));
   color: white;

@@ -21,7 +21,7 @@ function Home() {
           <a href="#aider">AIDER</a>
           <a href="#reseaux">RÉSEAUX</a>
           <a href="#contact">CONTACT</a>
-          <Link to="/propuesta">PROPOSITION</Link>
+          <Link to="/propuesta" className="nav-highlight">PROPOSITION</Link>
         </div>
         <a href="#aider" className="btn-donate">SOUTENIR</a>
       </nav>
