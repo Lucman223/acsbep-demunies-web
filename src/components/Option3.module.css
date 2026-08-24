@@ -1,0 +1,86 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: #fffaf0;
+  box-shadow: 0 4px 20px rgba(180, 83, 9, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logoImg {
+  height: 55px;
+}
+.navLinks a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #78350f;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.btnDonate {
+  background-color: #d97706; /* Sun Yellow/Orange */
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btnDonate:hover {
+  background-color: #b45309;
+  transform: translateY(-3px);
+}
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #fffaf0 40%, transparent), url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center right/cover no-repeat;
+  padding: 0 5%;
+}
+.heroContent {
+  max-width: 600px;
+}
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  color: #78350f; /* Deep brown */
+}
+.heroText {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  color: #92400e;
+  line-height: 1.6;
+}
+.section {
+  padding: 6rem 5%;
+  background-color: #b45309; /* Terracotta */
+  color: white;
+  text-align: center;
+}
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.card {
+  background: #fffaf0;
+  color: #78350f;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
