@@ -16,7 +16,7 @@
 }
 .logoImg {
   height: 60px;
-  filter: grayscale(100%) brightness(200%); /* Make logo white for contrast */
+  filter: grayscale(100%) brightness(200%);
 }
 .navLinks a {
   margin: 0 1.5rem;
@@ -27,9 +27,9 @@
 }
 .btnDonate {
   background-color: #ffffff;
-  color: #064e3b; /* Emerald */
+  color: #064e3b;
   padding: 0.8rem 2rem;
-  border-radius: 0; /* Sharp corners */
+  border-radius: 0;
   text-decoration: none;
   font-weight: 600;
   border: none;
@@ -45,7 +45,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(6, 78, 59, 0.9), rgba(6, 78, 59, 0.9)), url('https://images.unsplash.com/photo-1593113514214-41d3ccb0c793?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+  background: linear-gradient(rgba(6, 78, 59, 0.9), rgba(6, 78, 59, 0.9)), url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
   color: white;
   padding: 0 10%;
 }
@@ -64,6 +64,7 @@
   margin-bottom: 3rem;
   font-weight: 300;
   opacity: 0.8;
+  line-height: 1.6;
 }
 .section {
   padding: 8rem 10%;
@@ -71,18 +72,107 @@
 }
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 4rem;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .largeText {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 1.1;
   color: #111827;
+  letter-spacing: -1px;
 }
 .smallText {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #4b5563;
   line-height: 1.8;
+}
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.actionCard {
+  background-color: #1f2937;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+}
+.actionCard:hover {
+  transform: scale(1.02);
+}
+.actionImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.actionCard:hover .actionImg {
+  opacity: 0.3;
+}
+.actionContent {
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+.actionTitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+.actionDesc {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s;
+}
+.actionCard:hover .actionDesc {
+  opacity: 1;
+  max-height: 100px;
+}
+.statsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 2px solid #e5e7eb;
+  padding-left: 3rem;
+}
+.statLine {
+  display: flex;
+  flex-direction: column;
+}
+.sValue {
+  font-size: 4rem;
+  font-weight: 300;
+  color: #047857;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.sLabel {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+.footer {
+  background-color: #000;
+  color: white;
+  padding: 4rem 10%;
+  text-align: center;
 }
