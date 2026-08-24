@@ -173,7 +173,12 @@ function Home() {
           <p className="contact-text">
             {contentData.contact.address}<br />
             Zone d'intervention : {contentData.contact.scope}<br />
-            Téléphone : <a href={`tel:${contentData.contact.phone.replace(/\s/g, '')}`}>{contentData.contact.phone}</a>
+            Téléphone : {contentData.contact.phones.map((phone, i) => (
+              <React.Fragment key={phone}>
+                <a href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a>
+                {i < contentData.contact.phones.length - 1 && ' · '}
+              </React.Fragment>
+            ))}
           </p>
           <div className="contact-actions">
             <a

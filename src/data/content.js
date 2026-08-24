@@ -74,7 +74,7 @@ export const contentData = {
   contact: {
     address: "Tournant de Baco Djicoroni ACI, près de la BNDA, Bamako, Mali",
     scope: "Mali et toute l'Afrique",
-    phone: "+223 72 74 94 11",
+    phones: ["+223 72 74 94 11", "+223 66 97 62 57"],
     whatsapp: "22372749411"
   },
   donationMethods: [
