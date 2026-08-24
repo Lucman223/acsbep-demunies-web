@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { contentData } from '../data/content';
 import { socialIcons, activityIcons, donationIcons } from '../components/Icons';
@@ -7,6 +6,9 @@ import DonationModal from '../components/DonationModal';
 
 function Home() {
   const [activeMethod, setActiveMethod] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <>
@@ -15,15 +17,28 @@ function Home() {
           <img src={logo} alt="Logo ACSBEP-DEMUNIES" className="logo-img" />
           <div className="logo-text">ACSBEP-DEMUNIES</div>
         </div>
-        <div className="nav-links">
-          <a href="#histoire">HISTOIRE</a>
-          <a href="#actions">ACTIONS</a>
-          <a href="#aider">AIDER</a>
-          <a href="#reseaux">RÉSEAUX</a>
-          <a href="#contact">CONTACT</a>
-          <Link to="/propuesta" className="nav-highlight">PROPOSITION</Link>
+        <div className={`nav-links${menuOpen ? ' open' : ''}`}>
+          <a href="#histoire" onClick={closeMenu}>HISTOIRE</a>
+          <a href="#actions" onClick={closeMenu}>ACTIONS</a>
+          <a href="#aider" onClick={closeMenu}>AIDER</a>
+          <a href="#reseaux" onClick={closeMenu}>RÉSEAUX</a>
+          <a href="#contact" onClick={closeMenu}>CONTACT</a>
+          <a href="proposition.html" className="nav-highlight" onClick={closeMenu}>PROPOSITION</a>
         </div>
-        <a href="#aider" className="btn-donate">SOUTENIR</a>
+        <div className="navbar-actions">
+          <a href="#aider" className="btn-donate">SOUTENIR</a>
+          <button
+            type="button"
+            className={`nav-toggle${menuOpen ? ' open' : ''}`}
+            aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(o => !o)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
 
       <section className="hero">

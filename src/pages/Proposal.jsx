@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import heroShot from '../assets/proposal-hero.png';
 import aiderShot from '../assets/proposal-aider.png';
@@ -14,9 +13,9 @@ function Proposal() {
           <div className="logo-text">ACSBEP-DEMUNIES</div>
         </div>
         <div className="nav-links">
-          <Link to="/">ACCUEIL DU SITE</Link>
+          <a href="./">ACCUEIL DU SITE</a>
         </div>
-        <Link to="/" className="btn-donate">RETOUR AU SITE</Link>
+        <a href="./" className="btn-donate">RETOUR AU SITE</a>
       </nav>
 
       <div className="proposal-doc">
